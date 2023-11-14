@@ -369,7 +369,7 @@ a.btn:nth-child(2)::before{
     display: relative;
     justify-content: center;
     align-items: center;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     background: var(--secon-bg-color);
 }
 
@@ -411,14 +411,14 @@ a.btn:nth-child(2)::before{
    
 }
 
-.about .about-content .personal-info-pad-15 {
+.about .about-content .personal-info  {
     /* flex: 0 0 60%; */
     max-width: 60%;
     margin-top: 20px;
     
 }
 
-.about .about-content .personal-info-pad-15 h4{
+.about .about-content .personal-info  h4{
     margin-bottom: 20px;
     margin-left: 300px;
     color: #12f7ff;
@@ -426,24 +426,36 @@ a.btn:nth-child(2)::before{
 
 
 
- .about .about-content .personal-info-pad-15 .info-item-pad-15 {
-    flex: 0 0 50%;
-    max-width: 50%;
+ .about .about-content .personal-info .info-item {
+    flex: 0 0 calc(50% - 15px); 
+    max-width: calc(50% - 15px); 
 }
 
-.about .about-content .personal-info-pad-15 .info-item-pad-15 p {
+.about .about-content .personal-info .info-item p {
     font-size: 16px;
     font-weight: 600;
     padding: 10px 0;
     color: #fdfdfd;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    
+}
+
+.about .about-content .personal-info .left{
     border-bottom: 1px solid var(--hover-color);
 }
 
-.about .about-content .personal-info-pad-15 .info-item-pad-15 p span {
+.about .about-content .personal-info .right{
+    margin-left: 25px;
+    border-bottom: 1px solid var(--hover-color);
+}
+
+.about .about-content .personal-info .info-item p span {
     font-weight: 400;
-    color: var(--text-black-700);
     margin-left: 4px;
     display: inline-block;
+    color: #fff;
+    
 }
 
 .res-row{
@@ -974,17 +986,7 @@ a.btn:nth-child(2)::before{
     transform: scale(1.05);
 }
 
-/* ----------------------parallax----------------------------------*/
-.scroll-scale{
-    opacity: 0;
-    transform: scale(.9);
-    transition: all 2s;
-}
 
-.scroll-scale .show-items{
-    opacity: 1;
-    transform: translateX(0);
-}
 
 
 
@@ -1147,60 +1149,66 @@ a.btn:nth-child(2)::before{
 
 }
 
-@media only screen and (max-width:930px){
-    .about{
-        width: 100%;
-        
-    }
-    .res-row{
-        grid-template-columns: 1fr 1fr;
-    }
-    #certificates .cer-row{
-        margin-top: 70px;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 50px;
-    }
-    .projects-gallery{
-        grid-template-columns: 1fr 1fr;
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
     }
 
-    .contact .contact-info-item {
-        flex: 0 0 50%;
-        max-width: 50%;
+    header {
+        padding: 15px 10%;
     }
-    .contact .contact-info-item, .contact .contact-form .col-6{
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    
 
-  
 }
 
-@media only screen and (max-width:600px){
-    .about{
-        width: 100%;
-        
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
     }
-    .res-row{
-        grid-template-columns: 1fr ;
+
+    header {
+        padding: 15px 5%;
     }
-    #certificates .cer-row{
-        margin-top: 70px;
-        grid-template-columns: 1fr ;
-        grid-gap: 50px;
+
+    .navlist {
+        flex-direction: column;
     }
-    .projects-gallery{
+
+    .navlist a.head {
+        padding: 10px;
+        margin-left: 15px;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    #about .about-content .personal-info {
+        max-width: 90%; 
+        margin-left: 0%; 
+    }
+    #about .res-row{
         grid-template-columns: 1fr;
     }
 
+    .res-row .row-box {
+        padding: 20px 5%; 
+    }
     
-   
-}
+    .contact-section {
+        padding: 50px 5%; 
+    }
 
-@media (max-width:1200px){
-    .about .about-content .personal-info .info-item p span {
-        display: block;
-        margin-left: 0;
+    .row .contact-info-item {
+        flex: 0 0 100%; 
+        max-width: 100%;
+        text-align: center; 
+    }
+
+    .row .contact-form  {
+        flex: 0 0 100%; 
+        max-width: 100%;
+        margin-left: -20px;
     }
 }
